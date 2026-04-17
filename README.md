@@ -1,0 +1,1 @@
+# aurora_opensearch_benchmark
