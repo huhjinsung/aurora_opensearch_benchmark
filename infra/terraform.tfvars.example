@@ -1,0 +1,18 @@
+# 복사해서 terraform.tfvars로 만들고 값을 채워주세요
+# cp terraform.tfvars.example terraform.tfvars
+
+aws_region   = "ap-northeast-2"
+project_name = "tmoney-poc"
+
+# 기존 VPC 재사용
+vpc_id = "vpc-xxxxxxxxxxxxxxxxx"
+private_subnet_ids = [
+  "subnet-xxxxxxxxxxxxxxxxx", # AZ-a
+  "subnet-xxxxxxxxxxxxxxxxx"  # AZ-c
+]
+
+# Aurora MySQL
+aurora_master_password = "CHANGE_ME_StrongPassword1!"
+
+# OpenSearch
+opensearch_master_password = "CHANGE_ME_StrongPassword1!"
