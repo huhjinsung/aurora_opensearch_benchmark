@@ -59,14 +59,6 @@ CREATE TABLE tgls_param_logs (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
-
-| 컬럼 | 타입 | 의미 |
-|------|------|------|
-| `TGLS_PRMT_LOG_VAL` | VARCHAR(4000) | 태그리스 파라미터로그 (JSON) |
-| `TGLS_LOC_LOG_LARG_CTT` | VARCHAR(3000) | 위치로그 (Base64 바이트 시계열) |
-| `TGLS_EVNT_LOG_LARG_CTT` | VARCHAR(3000) | 이벤트로그 |
-| `TGLS_PRMT_FLAG_VAL` | INT | 배치 분석 플래그 |
-
 **샘플 파라미터로그 JSON 구조 (키 a~u):**
 
 ```json
