@@ -41,6 +41,25 @@
 
 실제 데이터 구조를 기반으로 테스트 데이터를 생성하였습니다.
 
+```sql
+CREATE TABLE tgls_param_logs (
+    id                       BIGINT AUTO_INCREMENT PRIMARY KEY,
+    tgls_prmt_log_val        VARCHAR(4000)  COMMENT '태그리스 파라미터로그 JSON',
+    tgls_loc_log_larg_ctt    VARCHAR(3000)  COMMENT '위치로그 Base64',
+    tgls_evnt_log_larg_ctt   VARCHAR(3000)  COMMENT '이벤트로그',
+    tgls_prmt_flag_val       INT DEFAULT NULL COMMENT '배치 분석 플래그',
+    station_id               VARCHAR(10)    COMMENT '역사 ID',
+    device_id                VARCHAR(20)    COMMENT '장치 ID',
+    rgsr_id                  VARCHAR(20)    COMMENT '등록자 ID',
+    rgt_dtm                  VARCHAR(14)    COMMENT '등록일시 (yyyyMMddHHmmss)',
+    moapp_trns_trd_trnc_id   VARCHAR(70)    COMMENT '모바일앱 트랜잭션ID',
+    INDEX idx_rgt_dtm    (rgt_dtm),
+    INDEX idx_station_id (station_id),
+    INDEX idx_device_id  (device_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+
 | 컬럼 | 타입 | 의미 |
 |------|------|------|
 | `TGLS_PRMT_LOG_VAL` | VARCHAR(4000) | 태그리스 파라미터로그 (JSON) |
